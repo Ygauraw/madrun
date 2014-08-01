@@ -1,4 +1,4 @@
 Mad Run
 =======
 
-An android game like Temple Run
+An android game like Temple Run.
