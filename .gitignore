@@ -1,0 +1,13 @@
+/gdx-game-android/bin
+/gdx-game-android/gen
+/gdx-game-android/obj
+/gdx-game-android/libs/*/*.so
+/gdx-game-android/bin/jardex/gdx-backend-android.jar.dex
+/gdx-game/libs/gdx.jar
+/gdx-game/bin
+/releases
+/gdx-game-android/.classpath
+/gdx-game-android/.project
+/gdx-game-android/project.properties
+/gdx-game/.project
+/gdx-game/.classpath
