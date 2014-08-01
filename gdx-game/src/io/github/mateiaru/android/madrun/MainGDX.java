@@ -31,7 +31,10 @@ public class MainGDX implements ApplicationListener {
 		title.scale(3f);
 		title.setColor(new Color(1f, 1f, 0f, 1f));
 		title.getRegion().getTexture().setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-//		button = 
+		button = new BitmapFont();
+		button.scale(2f);
+		button.setColor(new Color(0.8f, 0.2f, 0.7f, 1.0f));
+		button.getRegion().getTexture().setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 		lr = new ShapeRenderer();
 		lr.setColor(0.15f, 0.95f, 0.15f, 1.00f);
 		fr = new ShapeRenderer();
