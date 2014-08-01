@@ -8,6 +8,7 @@
 /releases
 /gdx-game-android/.classpath
 /gdx-game-android/.project
+/gdx-game-android/libs/*.jar
 /gdx-game-android/project.properties
 /gdx-game/.project
 /gdx-game/.classpath
