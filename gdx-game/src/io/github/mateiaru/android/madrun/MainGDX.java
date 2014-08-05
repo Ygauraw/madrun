@@ -23,6 +23,7 @@ public class MainGDX implements ApplicationListener {
 		// Initialize stuff
 		r = new Random();
 		batch = new SpriteBatch();
+		GdxUtils.STAGE_CURRENT = GdxUtils.STAGE_MENU;
 		// Font for loading text
 		font = new BitmapFont();
 		font.scale(2f);
@@ -143,7 +144,23 @@ public class MainGDX implements ApplicationListener {
 	
 	Thread input = new Thread() {
 		public void run() {
-			
+			while (GdxUtils.STAGE_CURRENT != GdxUtils.STAGE_EXITING) {
+				if (GdxUtils.STAGE_CURRENT == GdxUtils.STAGE_MENU) {
+					switch(GdxUtils.getPressedButton(x, y)) {
+						case GdxUtils.BUTTON_PLAY:
+							
+							
+							break;
+						case GdxUtils.BUTTON_SETTINGS:
+							
+							
+							break;
+						case GdxUtils.BUTTON_QUIT:
+							GdxUtils.STAGE_CURRENT = GdxUtils.STAGE_EXITING;
+							break;
+					}
+				}
+			}
 		}
 	};
 	
