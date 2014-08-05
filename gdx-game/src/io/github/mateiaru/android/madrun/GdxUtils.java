@@ -7,6 +7,11 @@ public class GdxUtils {
 	public static final int BUTTON_PLAY     = 0x00000052;
 	public static final int BUTTON_SETTINGS = 0x00001579;
 	public static final int BUTTON_QUIT     = 0x152f1579;
+	public static final int STAGE_MENU      = 0xabcdef52;
+	public static final int STAGE_GAME      = 0xabcd1579;
+	public static final int STAGE_SETTINGS  = 0xab157952;
+	public static final int STAGE_EXITING   = 0x152a1579;
+	public static       int STAGE_CURRENT;
 	
 	public static int getPressedButton(int x, int y) {
 		if (x >= 15 && x <= (Gdx.graphics.getWidth() - 15)) {
