@@ -16,6 +16,7 @@ public class MainGDX implements ApplicationListener {
 	ShapeRenderer fr;
 	Random r;
 	boolean hasLoaded = false;
+	int x = 0, y = 0;
 
 	@Override
 	public void create() {
@@ -54,14 +55,17 @@ public class MainGDX implements ApplicationListener {
 		    Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 			batch.begin();
 			font.draw(batch, "Loading...", 10, 50);
-			batch.draw(MadRunFiles.LOGO, Gdx.graphics.getWidth() / 4, Gdx.graphics.getHeight() - (Gdx.graphics.getWidth() / 2), 
-					   Gdx.graphics.getWidth() / 2, Gdx.graphics.getWidth() / 2);
+			batch.draw(MadRunFiles.LOGO, 20, Gdx.graphics.getHeight() - (Gdx.graphics.getWidth() - 40), 
+					   Gdx.graphics.getWidth() - 40, Gdx.graphics.getWidth() - 40);
 			batch.end();
 		} else {
 			Gdx.gl.glClearColor(1.0f, 0.2f, 0.2f, 1.0f);
 			Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 			////////////////////////////
-			
+			if (Gdx.input.isTouched()) {
+				x = Gdx.input.getX();
+				y = Gdx.input.getY();
+			}
 			lr.begin(ShapeRenderer.ShapeType.Line);
 			// First button
 			for (int i = 0; i < 10; i++) {
@@ -79,7 +83,7 @@ public class MainGDX implements ApplicationListener {
 			fr.begin(ShapeRenderer.ShapeType.Filled);
 			fr.rect(25, Gdx.graphics.getHeight() - 191, Gdx.graphics.getWidth() - 49, 61); // First button
 			fr.rect(25, Gdx.graphics.getHeight() - 291, Gdx.graphics.getWidth() - 49, 61); // Second button
-			fr.rect(25, Gdx.graphics.getHeight() - 391, Gdx.graphics.getWidth() - 49, 61);
+			fr.rect(25, Gdx.graphics.getHeight() - 391, Gdx.graphics.getWidth() - 49, 61); // Third button
 			fr.end();
 			
 			////////////////////////////
@@ -99,6 +103,7 @@ public class MainGDX implements ApplicationListener {
 			int exitW = (int) (Gdx.graphics.getWidth() / 2 - (exitB.width / 2));
 			button.draw(batch, "Exit App", exitW, Gdx.graphics.getHeight() - 340);
 			batch.end();
+			// Check 
 		}
 	}
 
