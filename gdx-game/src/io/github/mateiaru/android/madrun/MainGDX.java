@@ -43,9 +43,12 @@ public class MainGDX implements ApplicationListener {
 		lr.setColor(0.15f, 0.95f, 0.15f, 1.00f);
 		fr = new ShapeRenderer();
 		fr.setColor(0f, 0f, 1f, 1f);
+		// Loading files thread
 		t.start();
 		// Load the starting logo
 		MadRunFiles.LOGO = new Texture(Gdx.files.internal("logo.png"));
+		// Thread used to get user input
+		input.start();
 	}
 
 	@Override
@@ -103,7 +106,6 @@ public class MainGDX implements ApplicationListener {
 			int exitW = (int) (Gdx.graphics.getWidth() / 2 - (exitB.width / 2));
 			button.draw(batch, "Exit App", exitW, Gdx.graphics.getHeight() - 340);
 			batch.end();
-			// Check 
 		}
 	}
 
@@ -136,6 +138,12 @@ public class MainGDX implements ApplicationListener {
 				sleep(2000);
 			} catch (InterruptedException e) {e.printStackTrace();}
 			hasLoaded = true;
+		}
+	};
+	
+	Thread input = new Thread() {
+		public void run() {
+			
 		}
 	};
 	
